@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="block1">
+  <meta http-equiv="refresh" content="{{estimate}};url=http://localhost:5000/download" />
+  <h1>Geocoder v0.1.0</h1>
+  <br>
+  <h2>loading...</h2>
+  <h4>Estimate: {{estimate}} seconds</h4>
+  <br>
+  <div>
+    <img src="{{url_for('static', filename='gifs/loading1.gif')}}" />
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+</div>
+{% endblock %}

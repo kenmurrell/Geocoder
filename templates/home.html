@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div id="home">
+  <h1>Geocoder v0.1.0</h1>
+  <br>
+  <h2>Upload a csv file in the following format:</h2>
+  <h3>Street #,  Street,  City,  Province</h3>
+  <br>
+  <p>
+  <form id="upload-form" action="{{url_for('upload')}}" method="POST" enctype="multipart/form-data" >
+    <input type="file" name="file" accept=".csv">
+    <input type="submit" name='submit' value="Geocode!">
+  </form>
+  </p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="container" align="center">
+    <a href="/about" target="_self">about</a>
+  </div>
+</div>
+
+{% endblock %}
