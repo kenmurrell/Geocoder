@@ -6,10 +6,7 @@ import os
 
 coding='xml'
 server='https://maps.googleapis.com/maps/api/geocode/{0}?address='.format(coding)
-proxies = {
-  'http': 'http://pchproxy.in.pch.gc.ca/accelerated_pac_base.pac',
-  'https': 'http://pchproxy.in.pch.gc.ca/accelerated_pac_base.pac'
-}
+
 
 #UTF-8 is love, UTF-8 is life
 def _encode_to_byte(text):
@@ -32,7 +29,7 @@ class Geocode(object):
                 try:
                     loc_str= row[0].replace(' ','+')+',+'+row[1].replace(' ','+') +',+'+ row[2].replace(' ','')
                     url= server + loc_str + "&key=" + self.key
-                    server_response=requests.get(url,proxies=proxies)
+                    server_response=requests.get(url)
                     server_response = ET.fromstring(_encode_to_byte(server_response.text))
                     #_check_status(server_response) #throws ConnectionError
                     struct=server_response.find('result').find('geometry').find('location')
